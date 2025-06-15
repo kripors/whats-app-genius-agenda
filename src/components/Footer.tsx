@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => document.getElementByI('beneficios')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('beneficios')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Benefícios

@@ -1,5 +1,4 @@
-
-import { Calendar, FileText, MapPin, Brain } from 'lucide-react';
+import { Calendar, FileText, MapPin, Brain, MessageSquare } from 'lucide-react';
 
 const FeaturesSection = () => {
   const features = [

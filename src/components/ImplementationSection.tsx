@@ -1,5 +1,4 @@
-
-import { CheckCircle, Settings, Zap } from 'lucide-react';
+import { CheckCircle, Settings, Zap, Brain } from 'lucide-react';
 
 const ImplementationSection = () => {
   const steps = [
