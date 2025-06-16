@@ -26,15 +26,37 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Enviar dados do formulário por email
+      const emailBody = `
+Nome: ${formData.name}
+Empresa: ${formData.company}
+Email: ${formData.email}
+WhatsApp: ${formData.whatsapp}
+
+Solicitação de demonstração enviada através do site.
+      `;
+      
+      // Simular envio de email (você pode integrar com um serviço de email real)
+      const mailtoLink = `mailto:technoportors15@gmail.com?subject=Nova Solicitação de Demonstração - ${formData.company}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Abrir cliente de email padrão
+      window.location.href = mailtoLink;
+      
       toast({
         title: "Demonstração Agendada!",
         description: "Entraremos em contato em breve para confirmar o horário.",
       });
-      setIsSubmitting(false);
+      
       setFormData({ name: '', email: '', whatsapp: '', company: '' });
-    }, 2000);
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente ou entre em contato pelo WhatsApp.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openWhatsApp = () => {
@@ -122,7 +144,7 @@ const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="h-12"
+                    className="h-12 border-gray-200 focus:border-brand-500 focus:ring-brand-500"
                     placeholder="Seu nome completo"
                   />
                 </div>
@@ -137,7 +159,7 @@ const ContactSection = () => {
                     required
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="h-12"
+                    className="h-12 border-gray-200 focus:border-brand-500 focus:ring-brand-500"
                     placeholder="Nome da sua empresa"
                   />
                 </div>
@@ -154,7 +176,7 @@ const ContactSection = () => {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="h-12"
+                  className="h-12 border-gray-200 focus:border-brand-500 focus:ring-brand-500"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -170,7 +192,7 @@ const ContactSection = () => {
                   required
                   value={formData.whatsapp}
                   onChange={handleInputChange}
-                  className="h-12"
+                  className="h-12 border-gray-200 focus:border-brand-500 focus:ring-brand-500"
                   placeholder="(51) 99999-9999"
                 />
               </div>
@@ -182,7 +204,7 @@ const ContactSection = () => {
                 className="w-full gradient-bg text-white font-semibold py-6 text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none"
               >
                 <Calendar className="mr-3 h-6 w-6" />
-                {isSubmitting ? 'AGENDANDO...' : 'AGENDAR MINHA DEMONSTRAÇÃO'}
+                {isSubmitting ? 'ENVIANDO...' : 'AGENDAR MINHA DEMONSTRAÇÃO'}
               </Button>
             </form>
 
@@ -197,3 +219,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

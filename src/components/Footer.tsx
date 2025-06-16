@@ -27,7 +27,7 @@ const Footer = () => {
                 <MessageCircle className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:contato@technoporto.com" 
+                href="mailto:technoportors15@gmail.com" 
                 className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center hover:bg-brand-700 transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-brand-500" />
-                <span className="text-gray-300">contato@technoporto.com</span>
+                <span className="text-gray-300">technoportors15@gmail.com</span>
               </li>
               <li className="text-gray-300">
                 Porto Alegre, RS - Brasil
@@ -110,3 +110,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
