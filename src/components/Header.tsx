@@ -20,10 +20,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
+            {/* Logo para desktop */}
             <img 
-              src="/lovable-uploads/a2614d59-0a3c-4706-9c59-60f14612017b.png" 
+              src="/lovable-uploads/67e48210-da9f-4971-a7d8-801d7fd790bf.png" 
               alt="Technoporto AI Solutions" 
-              className="h-8 lg:h-10 w-auto"
+              className="hidden sm:block h-8 lg:h-10 w-auto"
+            />
+            {/* Logo para mobile */}
+            <img 
+              src="/lovable-uploads/201d423d-8a7e-41f3-8412-a7b8119be509.png" 
+              alt="Technoporto AI Solutions" 
+              className="block sm:hidden h-8 w-auto"
             />
           </div>
 

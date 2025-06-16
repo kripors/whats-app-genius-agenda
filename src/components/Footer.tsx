@@ -8,10 +8,17 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
+            {/* Logo para desktop */}
             <img 
-              src="/lovable-uploads/a2614d59-0a3c-4706-9c59-60f14612017b.png" 
+              src="/lovable-uploads/67e48210-da9f-4971-a7d8-801d7fd790bf.png" 
               alt="Technoporto AI Solutions" 
-              className="h-10 w-auto mb-4 brightness-0 invert"
+              className="hidden sm:block h-10 w-auto mb-4 brightness-0 invert"
+            />
+            {/* Logo para mobile */}
+            <img 
+              src="/lovable-uploads/201d423d-8a7e-41f3-8412-a7b8119be509.png" 
+              alt="Technoporto AI Solutions" 
+              className="block sm:hidden h-10 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-gray-300 mb-6 max-w-md">
               Automatize seu atendimento no WhatsApp com inteligência artificial. 
@@ -110,4 +117,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
